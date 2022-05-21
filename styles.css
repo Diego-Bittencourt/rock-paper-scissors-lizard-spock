@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -10,7 +12,6 @@ body {
     font-size: 1.6rem;
     max-width: 900px;
     margin: 0 auto;
-    padding: 0;
 }
 
 .button-wrapper {
@@ -29,7 +30,7 @@ button {
     flex-direction: column;    
     align-items: center;
     justify-content: center;
-    
+    flex-grow: 2 1;
 }
 
 button i {
