@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    
     <script
       src="https://kit.fontawesome.com/143be46855.js"
       crossorigin="anonymous"
@@ -31,40 +32,54 @@
         </p>
       </div>
       <div class="button-wrapper">
-        <button>
+        <button id="scissors" value="scissors">
           <i class="fa-solid fa-hand-scissors"></i>
           <p>Scissors</p>
         </button>
-        <button>
+        <button id="paper" value="paper">
           <i class="fa-solid fa-hand"></i>
           <p>Paper</p>
         </button>
-        <button>
+        <button id="rock" value="rock">
           <i class="fa-solid fa-hand-back-fist"></i>
           <p>Rock</p>
         </button>
-        <button>
+        <button id="lizard" value="lizard">
           <i class="fa-solid fa-hand-lizard"></i>
           <p>Lizard</p>
         </button>
-        <button>
+        <button id="spock" value="spock">
           <i class="fa-solid fa-hand-spock"></i>
           <p>Spock</p>
         </button>
       </div>
       <div class="result-wrapper">
-        <div id="player-move" class="move"><h5>Your move:</h5></div>
+        <div class="move">
+          <h5>Your move:</h5>
+          <p id="player-move"></i></p>
+        </div>
         <div id="versus-display" class="move versus"></div>
-        <div id="computer-move" class="move"><h5>Computer's move:</h5></div>
+        <div class="move">
+          <h5>Computer's move:</h5>
+          <p id="computer-move"></p>
+        </div>
       </div>
     </main>
     <div id="game-stats" class="game-stats">
-        <div id="playerscore" class="score">You</div>
-        <div id="computerscore" class="score">Computer</div>
-        <div class="bar-wrapper">
+      <div class="score">
+        <p>You</p>
+        <p id="playerscore">3</p>
+      </div>
+      <div class="score">
+        <p>PC</p>
+        <p id="computerscore">4</p>
+      </div>
+      <div class="bar-wrapper">
+        <div class="rating health-text">Win/Lose Rating:</div>
         <div id="winrate" class="rating health"></div>
-        <div id="winrate" class="rating bkhealth">Win/Lose Rating:</div>
-        </div>
+        <div id="winrate" class="rating bkhealth"></div>
+      </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
