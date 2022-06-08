@@ -52,6 +52,11 @@ li {
   padding: 5px;
 }
 
+.description h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 .button-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -152,6 +157,11 @@ button p {
   text-align: center;
 }
 
+.score p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .rating {
   position: absolute;
   width: 100%;
@@ -161,10 +171,7 @@ button p {
   text-align: center;
 }
 
-.score p {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+
 
 .bar-wrapper {
   position: relative;
