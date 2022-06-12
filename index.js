@@ -9,8 +9,8 @@ const playerPoint = document.getElementById("playerscore");
 playerPoint.innerText = playerScore;
 
 var scoreRatio;
-const scoreOverTotal = document.getElementById("winrate");
-scoreOverTotal.innerText = scoreRatio;
+const scoreOverTotalAbove = document.getElementById("healthpercabove");
+// scoreOverTotal.innerText = scoreRatio;
 
 var playerMove = document.getElementById("player-move");
 var computerMove = document.getElementById("computer-move");
@@ -52,7 +52,7 @@ function scoreCount() {
         computerPoint.innerText = computerScore;
     }
     scoreRatio = Math.floor((playerScore / (playerScore + computerScore)) * 100);
-    scoreOverTotal.innerText = scoreRatio;
+    scoreOverTotalAbove.innerText = scoreRatio + "%";
     ratioHealth.style.width = scoreRatio + "%";
 
 }
