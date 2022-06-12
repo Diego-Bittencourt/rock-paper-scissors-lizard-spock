@@ -8,7 +8,7 @@ var playerScore = 0;
 const playerPoint = document.getElementById("playerscore");
 playerPoint.innerText = playerScore;
 
-var scoreRatio = playerScore + computerScore;
+var scoreRatio;
 const scoreOverTotal = document.getElementById("winrate");
 scoreOverTotal.innerText = scoreRatio;
 
@@ -17,6 +17,8 @@ var computerMove = document.getElementById("computer-move");
 
 var winner;
 const winnerShow = document.getElementById("versus-display");
+
+var ratioHealth = document.getElementById("winrate");
 
 const options = [
   {
@@ -51,6 +53,8 @@ function scoreCount() {
     }
     scoreRatio = Math.floor((playerScore / (playerScore + computerScore)) * 100);
     scoreOverTotal.innerText = scoreRatio;
+    ratioHealth.style.width = scoreRatio + "%";
+
 }
 
 function playermove(choice, move) {
