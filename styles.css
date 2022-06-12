@@ -124,6 +124,16 @@ button p {
   justify-self: left;
 }
 
+.versus {
+  font-family: 'Trade Winds', cursive;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 #player-move,
 #computer-move {
   font-size: 5rem;
