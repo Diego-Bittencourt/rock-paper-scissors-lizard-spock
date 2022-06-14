@@ -1,3 +1,22 @@
+const showRulesBtn = document.getElementById("show-rules");
+showRulesBtn.addEventListener("click", function() {
+  rulesDisplay.style.display = "block"; //open rules window
+});
+
+
+
+const rulesDisplay = document.getElementById("rules"); //rules display
+const closeRules = document.getElementById("closerules")
+closeRules.addEventListener('click', function() {
+  rulesDisplay.style.display = "none"; //close rules window
+});
+
+
+
+
+
+// #### main game logic ####
+
 var computer;
 var computerScore = 0;
 const computerPoint = document.getElementById("computerscore");

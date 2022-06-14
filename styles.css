@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: #c5f8d0fd;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +14,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: #c5f8d0fd;
+  background-color: var(--main-bg-color);
 }
 
 a {
@@ -22,10 +26,10 @@ ul {
   list-style-type: none;
 }
 
-main {
+.game-wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  
+  height: calc(100vh - 200px);
   padding: 3% 10%;
 }
 
@@ -68,9 +72,9 @@ li {
 }
 
 button {
-  width: 10vw;
+  width: 10%;
   min-width: 80px;
-  height: 10vw;
+  height: 10%;
   min-height: 80px;
   display: flex;
   flex-direction: column;
@@ -213,4 +217,33 @@ button p {
 
 .bkhealth {
   background-color: #b90000af;
+}
+
+.rules-wrapper {
+  margin: 20px auto;
+  width: 600px;
+  background-color: var(--main-bg-color);
+  text-align: center;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 40px;
+}
+
+.close-window {
+  align-self: flex-end;
+  padding: 5px;
+  background-color: #a38b8bdd;
+  width:30px;
+  height: 30px;
+  border-radius:50%;
+}
+
+.darkbkground {
+  position: absolute;
+  background-color: #312e2e75;
+  height: 100vh;
+  width: 100vw;
+  top:0;
+  left:0;
 }
