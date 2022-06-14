@@ -1,26 +1,27 @@
 var computer;
 var computerScore = 0;
 const computerPoint = document.getElementById("computerscore");
-computerPoint.innerText = computerScore;
+computerPoint.innerText = computerScore; //computer point DOM
 
 var player;
 var playerScore = 0;
 const playerPoint = document.getElementById("playerscore");
-playerPoint.innerText = playerScore;
+playerPoint.innerText = playerScore; //player points DOM
 
 var scoreRatio;
-const scoreOverTotalAbove = document.getElementById("healthpercabove");
+const scoreOverTotalAbove = document.getElementById("healthpercabove"); //health percentage score DOM
 // scoreOverTotal.innerText = scoreRatio;
 
-var playerMove = document.getElementById("player-move");
-var computerMove = document.getElementById("computer-move");
+var playerMove = document.getElementById("player-move"); //player move show DOM
+var computerMove = document.getElementById("computer-move"); //computer move show DOM
 
-var winner;
-const winnerShow = document.getElementById("versus-display");
+var winner; // variable that holds the winner.
 
-var ratioHealth = document.getElementById("winrate");
+const winnerShow = document.getElementById("versus-display");//winner show DOM
 
-const options = [
+var ratioHealth = document.getElementById("winrate"); //health bar ratio DOM
+
+const options = [ //move options to be used by the computer
   {
     move: "scissors",
     scheme: "fa-solid fa-hand-scissors",
@@ -43,19 +44,7 @@ const options = [
   },
 ];
 
-function scoreCount() {
-    if (winner === "player") {
-        playerScore++;
-        playerPoint.innerText = playerScore;
-    } else if (winner === "computer") {
-        computerScore++;
-        computerPoint.innerText = computerScore;
-    }
-    scoreRatio = Math.floor((playerScore / (playerScore + computerScore)) * 100);
-    scoreOverTotalAbove.innerText = scoreRatio + "%";
-    ratioHealth.style.width = scoreRatio + "%";
 
-}
 
 function playermove(choice, move) {
   player = move;
@@ -68,7 +57,7 @@ function playermove(choice, move) {
   // computermove();
 }
 
-function setWinner() {
+function setWinner() { //function with logic to determine the winner
   if (player === computer) {
     winner = "draw";
   } else {
@@ -112,9 +101,23 @@ function setWinner() {
       }
     }
   } // if draw
-  winnerShow.innerHTML = winner;
-  scoreCount();
+  winnerShow.innerHTML = winner; //sets the winner variable to the round's winner
+  scoreCount(); //triggers score counting function.
 } // end function
+
+function scoreCount() { //function takes account of the score using the winner variable
+  if (winner === "player") {
+      playerScore++;
+      playerPoint.innerText = playerScore;
+  } else if (winner === "computer") {
+      computerScore++;
+      computerPoint.innerText = computerScore;
+  }
+  scoreRatio = Math.floor((playerScore / (playerScore + computerScore)) * 100); //calculates the score in % with floor.
+  scoreOverTotalAbove.innerText = scoreRatio + "%"; //sets the % number
+  ratioHealth.style.width = scoreRatio + "%"; //sets the health bar length
+
+}
 
 // function computermove() {
 //     let index =  Math.floor(Math.random() * options.length);
@@ -126,27 +129,27 @@ function setWinner() {
 //the addEventListener should have a function pointer of a function returnin another function.
 //writing like addEventListener('click', oneFunction(argument)) will trigger the function right away.
 
-const paperbtn = document.getElementById("paper");
+const paperbtn = document.getElementById("paper"); //paper button DOM
 paperbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand", "paper");
 });
 
-const rockbtn = document.getElementById("rock");
+const rockbtn = document.getElementById("rock"); //rock button DOM
 rockbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand-back-fist", "rock");
 });
 
-const scissorsbtn = document.getElementById("scissors");
+const scissorsbtn = document.getElementById("scissors"); //scissors button DOM
 scissorsbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand-scissors", "scissors");
 });
 
-const lizardbtn = document.getElementById("lizard");
+const lizardbtn = document.getElementById("lizard"); //lizard button DOM
 lizardbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand-lizard", "lizard");
 });
 
-const spockbtn = document.getElementById("spock");
+const spockbtn = document.getElementById("spock"); //spock button DOM
 spockbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand-spock", "spock");
 });
