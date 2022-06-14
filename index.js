@@ -11,6 +11,11 @@ closeRules.addEventListener('click', function() {
   rulesDisplay.style.display = "none"; //close rules window
 });
 
+const shadebg = document.getElementById("darkbkground");
+shadebg.addEventListener("click", function() {
+  rulesDisplay.style.display = "none"; //close rules window when clicking in the dark background
+})
+
 
 
 
