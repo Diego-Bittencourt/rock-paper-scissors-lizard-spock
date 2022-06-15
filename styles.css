@@ -17,11 +17,6 @@ body {
   background-color: var(--main-bg-color);
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
 ul {
   list-style-type: none;
 }
@@ -55,6 +50,16 @@ li {
   border-radius: 15px;
   background-color: #ccffcc;
   padding: 7px;
+}
+
+li div:hover {
+ cursor: pointer;
+}
+
+img {
+  width: 30vw;
+  height: auto;
+  margin: 20px auto;
 }
 
 .description h3,
@@ -115,13 +120,13 @@ button p {
 }
 
 .move {
-  border: 2px solid darkblue;
   border-radius: 15px;
   width: 30%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0px 3px 5px 5px #cccccccc;
 }
 
 .move h5 {
@@ -187,15 +192,11 @@ button p {
   text-align: center;
 }
 
-
-
 .bar-wrapper {
   position: relative;
   width: 100%;
   height: 140px;
 }
-
-
 
 .health-text {
   z-index: 3;
@@ -228,6 +229,7 @@ button p {
   display: flex;
   flex-direction: column;
   padding: 10px 40px;
+  border-radius: 5px;
 }
 
 .close-window {
