@@ -52,7 +52,7 @@ li {
   padding: 7px;
 }
 
-li div:hover {
+li:hover {
  cursor: pointer;
 }
 
@@ -228,18 +228,25 @@ button p {
   font-size: 1.8rem;
   display: flex;
   flex-direction: column;
-  padding: 10px 40px;
+  padding: 5px 20px;
   border-radius: 5px;
 }
 
 .close-window {
   align-self: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 5px;
-  background-color: #a38b8bdd;
-  width:30px;
-  height: 30px;
+  background-color: #a38b8b77;
+  width:25px;
+  height: 25px;
   border-radius:50%;
+  font-size: 1.4rem;
 }
+
+
 
 .darkbkground {
   position: absolute;

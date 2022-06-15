@@ -1,14 +1,12 @@
-const showRulesBtn = document.getElementById("show-rules");
-showRulesBtn.addEventListener("click", function() {
-  rulesDisplay.style.display = "block"; //open rules window
-});
-
-
-
 const rulesDisplay = document.getElementById("rules"); //rules display
 const closeRules = document.getElementById("closerules")
 closeRules.addEventListener('click', function() {
   rulesDisplay.style.display = "none"; //close rules window
+});
+
+const showRulesBtn = document.getElementById("show-rules");
+showRulesBtn.addEventListener("click", function() {
+  rulesDisplay.style.display = "block"; //open rules window
 });
 
 const shadebg = document.getElementById("darkbkground");
@@ -141,6 +139,17 @@ function scoreCount() { //function takes account of the score using the winner v
   scoreOverTotalAbove.innerText = scoreRatio + "%"; //sets the % number
   ratioHealth.style.width = scoreRatio + "%"; //sets the health bar length
 
+  if (scoreRatio > 95) {
+    
+    ratioHealth.style.borderRadius = "10px";
+  }
+  else if (scoreRatio < 5) {
+    ratioHealth.style.width = "2%";
+  }
+  else {
+    
+    ratioHealth.style.borderRadius = "10px 0 0 10px";
+  }
 }
 
 // function computermove() {
