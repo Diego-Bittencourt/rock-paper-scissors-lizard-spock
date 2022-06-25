@@ -143,6 +143,10 @@ button p {
   
 }
 
+.winnershow {
+  font-size: 1rem;
+}
+
 #player-move,
 #computer-move {
   font-size: 5rem;
