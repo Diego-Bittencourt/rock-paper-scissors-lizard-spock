@@ -1,22 +1,18 @@
 const rulesDisplay = document.getElementById("rules"); //rules display
-const closeRules = document.getElementById("closerules")
-closeRules.addEventListener('click', function() {
+const closeRules = document.getElementById("closerules");
+closeRules.addEventListener("click", function () {
   rulesDisplay.style.display = "none"; //close rules window
 });
 
 const showRulesBtn = document.getElementById("show-rules");
-showRulesBtn.addEventListener("click", function() {
+showRulesBtn.addEventListener("click", function () {
   rulesDisplay.style.display = "block"; //open rules window
 });
 
 const shadebg = document.getElementById("darkbkground");
-shadebg.addEventListener("click", function() {
+shadebg.addEventListener("click", function () {
   rulesDisplay.style.display = "none"; //close rules window when clicking in the dark background
-})
-
-
-
-
+});
 
 // #### main game logic ####
 
@@ -39,11 +35,12 @@ var computerMove = document.getElementById("computer-move"); //computer move sho
 
 var winner; // variable that holds the winner.
 
-const winnerShow = document.getElementById("versus-display");//winner show DOM
+const winnerShow = document.getElementById("versus-display"); //winner show DOM
 
 var ratioHealth = document.getElementById("winrate"); //health bar ratio DOM
 
-const options = [ //move options to be used by the computer
+const options = [
+  //move options to be used by the computer
   {
     move: "scissors",
     scheme: "fa-solid fa-hand-scissors",
@@ -66,8 +63,6 @@ const options = [ //move options to be used by the computer
   },
 ];
 
-
-
 function playermove(choice, move) {
   player = move;
   playerMove.className = choice;
@@ -79,7 +74,8 @@ function playermove(choice, move) {
   // computermove();
 }
 
-function setWinner() { //function with logic to determine the winner
+function setWinner() {
+  //function with logic to determine the winner
   if (player === computer) {
     winner = "draw";
   } else {
@@ -128,30 +124,25 @@ function setWinner() { //function with logic to determine the winner
   animateCard(); //triggers the card animation.
 } // end function
 
-
-
 // ##### Score logic #####
-function scoreCount() { //function takes account of the score using the winner variable
+function scoreCount() {
+  //function takes account of the score using the winner variable
   if (winner === "player") {
-      playerScore++;
-      playerPoint.innerText = playerScore;
+    playerScore++;
+    playerPoint.innerText = playerScore;
   } else if (winner === "computer") {
-      computerScore++;
-      computerPoint.innerText = computerScore;
+    computerScore++;
+    computerPoint.innerText = computerScore;
   }
   scoreRatio = Math.floor((playerScore / (playerScore + computerScore)) * 100); //calculates the score in % with floor.
   scoreOverTotalAbove.innerText = scoreRatio + "%"; //sets the % number
   ratioHealth.style.width = scoreRatio + "%"; //sets the health bar length
 
   if (scoreRatio > 95) {
-    
     ratioHealth.style.borderRadius = "10px";
-  }
-  else if (scoreRatio < 5) {
+  } else if (scoreRatio < 5) {
     ratioHealth.style.width = "2%";
-  }
-  else {
-    
+  } else {
     ratioHealth.style.borderRadius = "10px 0 0 10px";
   }
 }
@@ -191,13 +182,32 @@ spockbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand-spock", "spock");
 });
 
-
-
 // ####### Animation logic #######
 
-const moveCards = document.getElementsByClassName('move');
+playerMove;
+computerMove;
+
+function animateCard() {
+  
+    let id = null; 
+    let pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 350) {
+        clearInterval(id);
+      } else {
+        pos++; 
+        playerMove.style.opacity = pos/350; 
+        playerMove.style.top = pos + "px"; 
+      }
+    }
+  
 
 
+} // end function
+playerMove;
+computerMove;
 
 // ######## NOT WORKING CODE #############
 // function playerChoice (e) {

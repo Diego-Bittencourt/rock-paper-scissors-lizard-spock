@@ -120,9 +120,17 @@ button p {
   margin-top: 50px;
 }
 
+.card-wrapper {
+  width: 30%;
+  position: relative;
+  height: 100%;
+}
+
 .move {
   border-radius: 15px;
-  width: 30%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
