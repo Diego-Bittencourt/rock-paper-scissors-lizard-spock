@@ -184,22 +184,22 @@ spockbtn.addEventListener("click", function () {
 
 // ####### Animation logic #######
 
-playerMove;
+const playerCard = document.getElementById('player-card');
 computerMove;
 
 function animateCard() {
   
     let id = null; 
-    let pos = 0;
+    let index = 0;
     clearInterval(id);
     id = setInterval(frame, 5);
     function frame() {
-      if (pos == 350) {
+      if (index == 50) {
         clearInterval(id);
       } else {
-        pos++; 
-        playerMove.style.opacity = pos/350; 
-        playerMove.style.top = pos + "px"; 
+        index++; 
+        playerCard.style.opacity = index/50; 
+        playerCard.style.top = index - 50 + "px"; 
       }
     }
   
