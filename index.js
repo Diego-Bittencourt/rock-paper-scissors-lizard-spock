@@ -185,29 +185,39 @@ spockbtn.addEventListener("click", function () {
 // ####### Animation logic #######
 
 const playerCard = document.getElementById('player-card');
+const computerCard = document.getElementById('computer-card');
+const versusCard = document.getElementById('versus-card');
 computerMove;
 
 function animateCard() {
-  
+    versusCard.style.opacity = 0;
     let id = null; 
     let index = 0;
     clearInterval(id);
     id = setInterval(frame, 5);
     function frame() {
-      if (index == 50) {
+      if (index === 200) {
         clearInterval(id);
+      } else if (index > 100) {
+        console.log("working")
+        index++
+        versusCard.style.opacity = (index - 100)/100; 
       } else {
         index++; 
-        playerCard.style.opacity = index/50; 
-        playerCard.style.top = index - 50 + "px"; 
-      }
+        playerCard.style.opacity = index/100; 
+        playerCard.style.top = index/2 - 50 + "px"; 
+        computerCard.style.opacity = index/100; 
+        computerCard.style.top = index/2 - 50 + "px"; 
+        }
+
+      
+
+      
     }
   
 
 
 } // end function
-playerMove;
-computerMove;
 
 // ######## NOT WORKING CODE #############
 // function playerChoice (e) {
