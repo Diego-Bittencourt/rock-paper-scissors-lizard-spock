@@ -125,8 +125,12 @@ function setWinner() { //function with logic to determine the winner
   } // if draw
   winnerShow.innerHTML = winner; //sets the winner variable to the round's winner
   scoreCount(); //triggers score counting function.
+  animateCard(); //triggers the card animation.
 } // end function
 
+
+
+// ##### Score logic #####
 function scoreCount() { //function takes account of the score using the winner variable
   if (winner === "player") {
       playerScore++;
@@ -186,6 +190,14 @@ const spockbtn = document.getElementById("spock"); //spock button DOM
 spockbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand-spock", "spock");
 });
+
+
+
+// ####### Animation logic #######
+
+const moveCards = document.getElementsByClassName('move');
+
+
 
 // ######## NOT WORKING CODE #############
 // function playerChoice (e) {

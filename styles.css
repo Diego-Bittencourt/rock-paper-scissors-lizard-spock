@@ -88,6 +88,7 @@ button {
   flex-grow: 2 1;
   border-radius: 15px;
   background-color: #1997ff;
+  border-color: transparent;
   color: #ccffcc;
   box-shadow: 0 5px #999;
 }
@@ -138,13 +139,19 @@ button p {
   font-size: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   
 }
 
 .winnershow {
-  font-size: 1rem;
+  font-size: 2.5rem;
+  height: 20%;
+  justify-self:initial;
+}
+
+.versus-display {
+  padding: 25% 0;
 }
 
 #player-move,
