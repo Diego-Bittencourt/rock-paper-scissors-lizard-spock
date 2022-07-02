@@ -75,6 +75,9 @@ function playermove(choice, move) {
 }
 
 function setWinner() {
+  versusCard.style.opacity = 0; //The animation wasn't working properly. Sometimes, the versus card would
+                                // stay visible while the other card were loading. Maybe this is an easy fix.
+                                // Maybe not the best approach.
   //function with logic to determine the winner
   if (player === computer) {
     winner = "draw";
