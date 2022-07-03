@@ -194,6 +194,14 @@ const versusCard = document.getElementById('versus-card');
 computerMove;
 
 function animateCard() {
+    paperbtn.disabled = true;
+    rockbtn.disabled = true;
+    scissorsbtn.disabled = true;
+    lizardbtn.disabled = true;
+    spockbtn.disabled = true;
+    // disabled the buttons. Now I need to create a css pseudo selector to disable components
+    // and change the disabled buttons - :disabled
+
     versusCard.style.opacity = 0;
     let id = null; 
     let index = 0;
@@ -204,10 +212,11 @@ function animateCard() {
         clearInterval(id);
        } else {
         index++; 
+        // alter the logic to a effect close to previous with less code.
         playerCard.style.opacity = index/100; 
-        playerCard.style.top = index/2 - 100 + "px"; 
+        playerCard.style.top = index - 100 + "px"; 
         computerCard.style.opacity = index/100; 
-        computerCard.style.top = index/2 - 100 + "px"; 
+        computerCard.style.top = index - 100 + "px"; 
         versusCard.style.opacity = (index - 100)/100; 
         }
 
