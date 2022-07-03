@@ -64,6 +64,9 @@ const options = [
 ];
 
 function playermove(choice, move) {
+  versusCard.style.opacity = 0; //The animation wasn't working properly. Sometimes, the versus card would
+                                // stay visible while the other card were loading. Maybe this is an easy fix.
+                                // Maybe not the best approach.
   player = move;
   playerMove.className = choice;
   let index = Math.floor(Math.random() * options.length);
@@ -75,9 +78,7 @@ function playermove(choice, move) {
 }
 
 function setWinner() {
-  versusCard.style.opacity = 0; //The animation wasn't working properly. Sometimes, the versus card would
-                                // stay visible while the other card were loading. Maybe this is an easy fix.
-                                // Maybe not the best approach.
+  
   //function with logic to determine the winner
   if (player === computer) {
     winner = "draw";
@@ -201,16 +202,13 @@ function animateCard() {
     function frame() {
       if (index === 200) {
         clearInterval(id);
-      } else if (index > 100) {
-        console.log("working")
-        index++
-        versusCard.style.opacity = (index - 100)/100; 
-      } else {
+       } else {
         index++; 
         playerCard.style.opacity = index/100; 
-        playerCard.style.top = index/2 - 50 + "px"; 
+        playerCard.style.top = index/2 - 100 + "px"; 
         computerCard.style.opacity = index/100; 
-        computerCard.style.top = index/2 - 50 + "px"; 
+        computerCard.style.top = index/2 - 100 + "px"; 
+        versusCard.style.opacity = (index - 100)/100; 
         }
 
       
