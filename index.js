@@ -161,6 +161,41 @@ function scoreCount() {
 //the addEventListener should have a function pointer of a function returnin another function.
 //writing like addEventListener('click', oneFunction(argument)) will trigger the function right away.
 
+// Controller Object
+
+/// ############ controller object ##########
+const controller = {
+  paper: {
+    handler: document.getElementById("paper"),
+    icon: "fa-solid fa-hand",
+    value: "paper",
+
+  },
+  rock: {
+    handler: document.getElementById("rock"),
+    icon: "fa-solid fa-hand-back-fist",
+    value: "rock"
+
+  },
+  scissors: {
+    handler: document.getElementById("scissors"),
+    icon: "fa-solid fa-hand-scissors",
+    value: "scissors"
+  },
+  lizard: {
+    handler: document.getElementById("lizard"),
+    icon: "fa-solid fa-hand-lizard",
+    value: 'lizard'
+  },
+  spock: {
+    handler: document.getElementById("spock"),
+    icon: "fa-solid fa-hand-spock",
+    value: "spock"
+  }
+
+};
+// ############# end controller object ############
+
 const paperbtn = document.getElementById("paper"); //paper button DOM
 paperbtn.addEventListener("click", function () {
   playermove("fa-solid fa-hand", "paper");
