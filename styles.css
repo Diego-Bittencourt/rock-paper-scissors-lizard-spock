@@ -112,6 +112,11 @@ button p {
   margin-top: 5px;
 }
 
+button:disabled {
+  background-color:rgb(102, 101, 101);
+  color: #333;
+}
+
 .result-wrapper {
   width: 100%;
   height: 30vh;

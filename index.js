@@ -243,22 +243,22 @@ function animateCard() {
     clearInterval(id);
     id = setInterval(frame, 5);
     function frame() {
-      if (index === 200) {
+      if (index === 100) {
         clearInterval(id);
         paperbtn.disabled = false;
         rockbtn.disabled = false;
         scissorsbtn.disabled = false;
         lizardbtn.disabled = false;
         spockbtn.disabled = false;
-       } else if (index < 100) {
+       } else if (index < 50) {
         index++; 
         // alter the logic to a effect close to previous with less code.
-        playerCard.style.opacity = index/100; 
-        playerCard.style.top = index - 100 + "px"; 
-        computerCard.style.opacity = index/100; 
-        computerCard.style.top = index - 100 + "px"; 
-        } else if (index >= 100) {
-          versusCard.style.opacity = index/199; 
+        playerCard.style.opacity = index/50; 
+        playerCard.style.top = index - 50 + "px"; 
+        computerCard.style.opacity = index/50; 
+        computerCard.style.top = index - 50 + "px"; 
+        } else if (index >= 50) {
+          versusCard.style.opacity = index/99; 
           index++
         }
 
