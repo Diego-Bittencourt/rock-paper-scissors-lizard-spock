@@ -9,7 +9,7 @@ showRulesBtn.addEventListener("click", function () {
   rulesDisplay.style.display = "block"; //open rules window
 });
 
-const shadebg = document.getElementById("darkbkground");
+const shadebg = document.getElementById("bkgroundtrue");
 shadebg.addEventListener("click", function () {
   rulesDisplay.style.display = "none"; //close rules window when clicking in the dark background
 });
