@@ -50,6 +50,7 @@ li {
   border-radius: 15px;
   background-color: #ccffcc;
   padding: 7px;
+  margin: auto 1%;
 }
 
 li:hover {
@@ -60,6 +61,12 @@ img {
   width: 80%;
   height: auto;
   margin: 20px auto;
+}
+
+.description {
+  width: 50vw;
+  max-width: 600px;
+  margin: 0 auto; 
 }
 
 .description h3,

@@ -4,10 +4,23 @@ closeRules.addEventListener("click", function () {
   rulesDisplay.style.display = "none"; //close rules window
 });
 
-const showRulesBtn = document.getElementById("show-rules");
+const showRulesBtn = document.getElementById("rulesbtn");
 showRulesBtn.addEventListener("click", function () {
   rulesDisplay.style.display = "block"; //open rules window
 });
+
+const resetGame = document.getElementById("reset-game");
+resetGame.addEventListener("click", function () {
+  computerPoint.innerText = 0;
+  computerScore = 0;
+  playerPoint.innerText = 0;
+  playerScore = 0;
+  winnerShow.innerHTML = "";
+  scoreOverTotalAbove.innerText = 0 + "%"; //sets the % number
+  ratioHealth.style.width = 0 + "%";
+  playerMove.className = "";
+  computerMove.className = "";
+})
 
 const shadebg = document.getElementById("bkgroundtrue");
 shadebg.addEventListener("click", function () {
