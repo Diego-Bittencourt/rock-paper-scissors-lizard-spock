@@ -17,7 +17,7 @@ resetGame.addEventListener("click", function () {
   playerScore = 0;
   winnerShow.innerHTML = "";
   scoreOverTotalAbove.innerText = 0 + "%"; //sets the % number
-  ratioHealth.style.width = 0 + "%";
+  ratioHealth.style.width = 50 + "%";
   playerMove.className = "";
   computerMove.className = "";
 })
