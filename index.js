@@ -164,6 +164,47 @@ function scoreCount() {
   }
 }
 
+//####Score object ####
+const score = {
+  player: {
+    score: 0,
+    addPoints() {
+      this.score++;
+      document.getElementById("playerscore").innerText = this.score;
+      score.scoreRatioCalc();
+    }
+  },
+  computer: {
+    score: 0,
+    addPoints() {
+      this.score++;
+      document.getElementById("computerscore").innerText = this.score;
+      score.scoreRatioCalc();
+    }
+  },
+  scoreCount() {
+    if (winner === "player") {
+      this.player.addPoints();
+    } else if (winner === "computer") {
+      this.computer.addPoints();
+    }
+  },
+  scoreRatio: 0,
+  scoreRatioCalc() {
+    this.scoreRatio = Math.floor((this.player.score / (this.player.score + this.computer.score)) * 100); //calculates the score in % with floor.
+    document.getElementById("healthpercabove").innerText = this.scoreRatio + "%"; //sets the % number
+    ratioHealth.style.width = this.scoreRatio + "%"; //sets the health bar length
+  
+    if (this.scoreRatio > 95) {
+      ratioHealth.style.borderRadius = "10px";
+    } else if (this.scoreRatio < 5) {
+      ratioHealth.style.width = "2%";
+    } else {
+      ratioHealth.style.borderRadius = "10px 0 0 10px";
+    }
+  }
+}
+
 // function computermove() {
 //     let index =  Math.floor(Math.random() * options.length);
 //     computerMove.className = options[index].scheme;
