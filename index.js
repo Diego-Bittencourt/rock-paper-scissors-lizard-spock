@@ -1,14 +1,11 @@
-// const rulesDisplay = document.getElementById("rules"); //rules display
-const closeRules = document.getElementById("closerules");
-closeRules.addEventListener("click", function () {
-  rulesDisplay.style.display = "none"; //close rules window
-});
+
+
 
 
 //###### rules object ######
 const rules = {
-  showRulesBtn() {document.getElementById("rulesbtn").addEventListener("click", this.showRules())},
-  closeRulesBtn() {document.getElementById("closerules").addEventListener("click", this.closeRules())},
+  showRulesBtn() {document.getElementById("rulesbtn").addEventListener("click", function() {rules.showRules()})},
+  closeRulesBtn() {document.getElementById("closerules").addEventListener("click", function() {rules.closeRules()})},
   closeRules() {
     document.getElementById("rules").style.display = "none";
   },
@@ -18,10 +15,12 @@ const rules = {
 }
 //###### end rules object #######
 
+// const rulesDisplay = document.getElementById("rules"); //rules display
+const closeRules = document.getElementById("closerules");
+closeRules.addEventListener("click", function() {rules.closeRules()}); //close rules window
+
 const showRulesBtn = document.getElementById("rulesbtn");
-showRulesBtn.addEventListener("click", function () {
-  rulesDisplay.style.display = "block"; //open rules window
-});
+showRulesBtn.addEventListener("click", function() {rules.showRules()});
 
 const resetGame = document.getElementById("reset-game");
 resetGame.addEventListener("click", function () {
