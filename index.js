@@ -1,8 +1,22 @@
-const rulesDisplay = document.getElementById("rules"); //rules display
+// const rulesDisplay = document.getElementById("rules"); //rules display
 const closeRules = document.getElementById("closerules");
 closeRules.addEventListener("click", function () {
   rulesDisplay.style.display = "none"; //close rules window
 });
+
+
+//###### rules object ######
+const rules = {
+  showRulesBtn() {document.getElementById("rulesbtn").addEventListener("click", this.showRules())},
+  closeRulesBtn() {document.getElementById("closerules").addEventListener("click", this.closeRules())},
+  closeRules() {
+    document.getElementById("rules").style.display = "none";
+  },
+  showRules () {
+    document.getElementById("rules").style.display = "block";
+  }
+}
+//###### end rules object #######
 
 const showRulesBtn = document.getElementById("rulesbtn");
 showRulesBtn.addEventListener("click", function () {
@@ -77,9 +91,6 @@ const options = [
 ];
 
 function playermove(choice, move) {
-  versusCard.style.opacity = 0; //The animation wasn't working properly. Sometimes, the versus card would
-                                // stay visible while the other card were loading. Maybe this is an easy fix.
-                                // Maybe not the best approach.
   player = move;
   playerMove.className = choice;
   let index = Math.floor(Math.random() * options.length);
@@ -315,14 +326,7 @@ function animateCard() {
           versusCard.style.opacity = index/99; 
           index++
         }
-
-      
-
-      
     }
-  
-
-
 } // end function
 
 // ######## NOT WORKING CODE #############
