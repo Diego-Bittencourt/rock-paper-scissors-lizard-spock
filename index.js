@@ -1,7 +1,4 @@
 
-
-
-
 //###### rules object ######
 const rules = {
   showRulesBtn() {document.getElementById("rulesbtn").addEventListener("click", function() {rules.showRules()})},
@@ -15,12 +12,17 @@ const rules = {
 }
 //###### end rules object #######
 
-// const rulesDisplay = document.getElementById("rules"); //rules display
+
+//####### events related to rules object ######
 const closeRules = document.getElementById("closerules");
 closeRules.addEventListener("click", function() {rules.closeRules()}); //close rules window
 
 const showRulesBtn = document.getElementById("rulesbtn");
-showRulesBtn.addEventListener("click", function() {rules.showRules()});
+showRulesBtn.addEventListener("click", function() {rules.showRules()}); //open rules window
+
+const shadebg = document.getElementById("bkgroundtrue");
+shadebg.addEventListener("click", function () {rules.closeRules()}); //close rules window when clicking in the dark background
+//####### end of events related to rules object ######
 
 const resetGame = document.getElementById("reset-game");
 resetGame.addEventListener("click", function () {
@@ -35,10 +37,7 @@ resetGame.addEventListener("click", function () {
   computerMove.className = "";
 })
 
-const shadebg = document.getElementById("bkgroundtrue");
-shadebg.addEventListener("click", function () {
-  rulesDisplay.style.display = "none"; //close rules window when clicking in the dark background
-});
+
 
 // #### main game logic ####
 
