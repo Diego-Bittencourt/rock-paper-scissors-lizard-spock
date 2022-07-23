@@ -42,18 +42,18 @@ resetGame.addEventListener("click", function () {
 
 const model = {
   startRound(player, icon) {
-    this.playerMove = player;
-    this.setComputerMove();
-    this.playerMoveIcon = icon;
+      this.playerMoveIcon = icon;
+      this.playerMove = player;
+      this.setComputerMove();
   },
   playerMoveIcon: '',
   playerMove: '',
   computerMove: '',
   setComputerMove() {
-  let index = Math.floor(Math.random() * this.moveOptions.length);
-  computerMove.className = this.moveOptions[index].scheme;
-  this.computerMove = this.moveOptions[index].move;
-  this.setWinner();
+      let index = Math.floor(Math.random() * this.moveOptions.length);
+      computerMove.className = this.moveOptions[index].scheme;
+      this.computerMove = this.moveOptions[index].move;
+      this.setWinner();
   },
   roundWinner: '',
   moveOptions: [
