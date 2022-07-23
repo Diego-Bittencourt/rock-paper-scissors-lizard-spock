@@ -41,12 +41,17 @@ resetGame.addEventListener("click", function () {
 //########## model object #######
 
 const model = {
+  startRound(player) {
+    this.playerMove = player;
+    this.setComputerMove();
+  },
   playerMove: '',
   computerMove: '',
   setComputerMove() {
   let index = Math.floor(Math.random() * this.moveOptions.length);
   computerMove.className = this.moveOptions[index].scheme;
   this.computerMove = this.moveOptions[index].move;
+  this.setWinner();
   },
   roundWinner: '',
   moveOptions: [
@@ -117,6 +122,7 @@ const model = {
         }
       }
     } // if draw
+    console.log(this.roundWinner)
     winnerShow.innerHTML = winner; //sets the winner variable to the round's winner
     score.scoreCount(this.roundWinner); //triggers score counting function.
     animateCard(); //triggers the card animation.
@@ -350,27 +356,27 @@ const controller = {
 
 const paperbtn = document.getElementById("paper"); //paper button DOM
 paperbtn.addEventListener("click", function () {
-  playermove("fa-solid fa-hand", "paper");
+  model.startRound('paper');
 });
 
 const rockbtn = document.getElementById("rock"); //rock button DOM
 rockbtn.addEventListener("click", function () {
-  playermove("fa-solid fa-hand-back-fist", "rock");
+  model.startRound('rock');
 });
 
 const scissorsbtn = document.getElementById("scissors"); //scissors button DOM
 scissorsbtn.addEventListener("click", function () {
-  playermove("fa-solid fa-hand-scissors", "scissors");
+  model.startRound('scissors');
 });
 
 const lizardbtn = document.getElementById("lizard"); //lizard button DOM
 lizardbtn.addEventListener("click", function () {
-  playermove("fa-solid fa-hand-lizard", "lizard");
+  model.startRound('lizard');
 });
 
 const spockbtn = document.getElementById("spock"); //spock button DOM
 spockbtn.addEventListener("click", function () {
-  playermove("fa-solid fa-hand-spock", "spock");
+  model.startRound('spock');
 });
 
 // ####### Animation logic #######
