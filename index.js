@@ -51,7 +51,7 @@ const model = {
   computerMove: '',
   setComputerMove() {
       let index = Math.floor(Math.random() * this.moveOptions.length);
-      computerMove.className = this.moveOptions[index].scheme;
+      document.getElementById("computer-move").className = this.moveOptions[index].scheme;
       this.computerMove = this.moveOptions[index].move;
       this.setWinner();
   },
@@ -161,114 +161,6 @@ const winnerShow = document.getElementById("versus-display"); //winner show DOM
 
 var ratioHealth = document.getElementById("winrate"); //health bar ratio DOM
 
-const options = [
-  //move options to be used by the computer
-  {
-    move: "scissors",
-    scheme: "fa-solid fa-hand-scissors",
-  },
-  {
-    move: "rock",
-    scheme: "fa-solid fa-hand-back-fist",
-  },
-  {
-    move: "paper",
-    scheme: "fa-solid fa-hand",
-  },
-  {
-    move: "lizard",
-    scheme: "fa-solid fa-hand-lizard",
-  },
-  {
-    move: "spock",
-    scheme: "fa-solid fa-hand-spock",
-  },
-];
-
-function playermove(choice, move) {
-  player = move;
-  playerMove.className = choice;
-  let index = Math.floor(Math.random() * options.length);
-  computerMove.className = options[index].scheme;
-  computer = options[index].move;
-  console.log(computer);
-  setWinner();
-  // computermove();
-}
-
-function setWinner() {
-  
-  //function with logic to determine the winner
-  if (player === computer) {
-    winner = "draw";
-  } else {
-    if (player === "rock") {
-      if (computer === "lizard" || computer === "scissors") {
-        winner = "player";
-      } else {
-        winner = "computer";
-      }
-    } // if rock
-
-    if (player === "paper") {
-      if (computer === "rock" || computer === "spock") {
-        winner = "player";
-      } else {
-        winner = "computer";
-      }
-    } // if paper
-
-    if (player === "scissors") {
-      if (computer === "paper" || computer === "lizard") {
-        winner = "player";
-      } else {
-        winner = "computer";
-      }
-    } // if scissors
-
-    if (player === "spock") {
-      if (computer === "rock" || computer === "scissors") {
-        winner = "player";
-      } else {
-        winner = "computer";
-      }
-    } // if spock
-
-    if (player === "lizard") {
-      if (computer === "paper" || computer === "spock") {
-        winner = "player";
-      } else {
-        winner = "computer";
-      }
-    }
-  } // if draw
-  winnerShow.innerHTML = winner; //sets the winner variable to the round's winner
-  scoreCount(); //triggers score counting function.
-  animateCard(); //triggers the card animation.
-} // end function
-
-// ##### Score logic #####
-function scoreCount() {
-  //function takes account of the score using the winner variable
-  if (winner === "player") {
-    playerScore++;
-    playerPoint.innerText = playerScore;
-  } else if (winner === "computer") {
-    computerScore++;
-    computerPoint.innerText = computerScore;
-  }
-  scoreRatio = Math.floor((playerScore / (playerScore + computerScore)) * 100); //calculates the score in % with floor.
-  scoreOverTotalAbove.innerText = scoreRatio + "%"; //sets the % number
-  ratioHealth.style.width = scoreRatio + "%"; //sets the health bar length
-
-  if (scoreRatio > 95) {
-    ratioHealth.style.borderRadius = "10px";
-  } else if (scoreRatio < 5) {
-    ratioHealth.style.width = "2%";
-  } else {
-    ratioHealth.style.borderRadius = "10px 0 0 10px";
-  }
-}
 
 //####Score object ####
 const score = {
