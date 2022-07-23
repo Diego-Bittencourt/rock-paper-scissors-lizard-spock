@@ -41,10 +41,12 @@ resetGame.addEventListener("click", function () {
 //########## model object #######
 
 const model = {
-  startRound(player) {
+  startRound(player, icon) {
     this.playerMove = player;
     this.setComputerMove();
+    this.playerMoveIcon = icon;
   },
+  playerMoveIcon: '',
   playerMove: '',
   computerMove: '',
   setComputerMove() {
@@ -122,8 +124,8 @@ const model = {
         }
       }
     } // if draw
-    console.log(this.roundWinner)
-    winnerShow.innerHTML = winner; //sets the winner variable to the round's winner
+    winnerShow.innerHTML = this.roundWinner; //sets the winner variable to the round's winner
+    document.getElementById("player-move").className = this.playerMoveIcon;
     score.scoreCount(this.roundWinner); //triggers score counting function.
     animateCard(); //triggers the card animation.
   } // end function
@@ -356,27 +358,27 @@ const controller = {
 
 const paperbtn = document.getElementById("paper"); //paper button DOM
 paperbtn.addEventListener("click", function () {
-  model.startRound('paper');
+  model.startRound('paper', "fa-solid fa-hand");
 });
 
 const rockbtn = document.getElementById("rock"); //rock button DOM
 rockbtn.addEventListener("click", function () {
-  model.startRound('rock');
+  model.startRound('rock', "fa-solid fa-hand-back-fist");
 });
 
 const scissorsbtn = document.getElementById("scissors"); //scissors button DOM
 scissorsbtn.addEventListener("click", function () {
-  model.startRound('scissors');
+  model.startRound('scissors', "fa-solid fa-hand-scissors");
 });
 
 const lizardbtn = document.getElementById("lizard"); //lizard button DOM
 lizardbtn.addEventListener("click", function () {
-  model.startRound('lizard');
+  model.startRound('lizard', "fa-solid fa-hand-lizard");
 });
 
 const spockbtn = document.getElementById("spock"); //spock button DOM
 spockbtn.addEventListener("click", function () {
-  model.startRound('spock');
+  model.startRound('spock', "fa-solid fa-hand-spock");
 });
 
 // ####### Animation logic #######
