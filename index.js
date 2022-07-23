@@ -38,6 +38,95 @@ resetGame.addEventListener("click", function () {
 })
 
 
+//########## model object #######
+
+const model = {
+  playerMove: '',
+  computerMove: '',
+  setComputerMove() {
+  let index = Math.floor(Math.random() * this.moveOptions.length);
+  computerMove.className = this.moveOptions[index].scheme;
+  this.computerMove = this.moveOptions[index].move;
+  },
+  roundWinner: '',
+  moveOptions: [
+    //move options to be used by the computer
+    {
+      move: "scissors",
+      scheme: "fa-solid fa-hand-scissors",
+    },
+    {
+      move: "rock",
+      scheme: "fa-solid fa-hand-back-fist",
+    },
+    {
+      move: "paper",
+      scheme: "fa-solid fa-hand",
+    },
+    {
+      move: "lizard",
+      scheme: "fa-solid fa-hand-lizard",
+    },
+    {
+      move: "spock",
+      scheme: "fa-solid fa-hand-spock",
+    },
+  ],
+  setWinner() {
+    //function with logic to determine the winner
+    if (this.playerMove === this.computerMove) {
+      this.roundWinner = "draw";
+    } else {
+      if (this.playerMove === "rock") {
+        if (this.computerMove === "lizard" || this.computerMove === "scissors") {
+          this.roundWinner = "player";
+        } else {
+          this.roundWinner = "computer";
+        }
+      } // if rock
+  
+      if (this.playerMove === "paper") {
+        if (this.computerMove === "rock" || this.computerMove === "spock") {
+          this.roundWinner = "player";
+        } else {
+          this.roundWinner = "computer";
+        }
+      } // if paper
+  
+      if (this.playerMove === "scissors") {
+        if (this.computerMove === "paper" || this.computerMove === "lizard") {
+          this.roundWinner = "player";
+        } else {
+          this.roundWinner = "computer";
+        }
+      } // if scissors
+  
+      if (this.playerMove === "spock") {
+        if (this.computerMove === "rock" || this.computerMove === "scissors") {
+          this.roundWinner = "player";
+        } else {
+          this.roundWinner = "computer";
+        }
+      } // if spock
+  
+      if (this.playerMove === "lizard") {
+        if (this.computerMove === "paper" || this.computerMove === "spock") {
+          this.roundWinner = "player";
+        } else {
+          this.roundWinner = "computer";
+        }
+      }
+    } // if draw
+    winnerShow.innerHTML = winner; //sets the winner variable to the round's winner
+    score.scoreCount(this.roundWinner); //triggers score counting function.
+    animateCard(); //triggers the card animation.
+  } // end function
+  
+  
+};
+
+// end of model object #########
+
 
 // #### main game logic ####
 
@@ -191,7 +280,7 @@ const score = {
       score.scoreRatioCalc();
     }
   },
-  scoreCount() {
+  scoreCount(winner) {
     if (winner === "player") {
       this.player.addPoints();
     } else if (winner === "computer") {
