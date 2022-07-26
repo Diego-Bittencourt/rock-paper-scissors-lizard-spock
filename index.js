@@ -1,4 +1,6 @@
-//------ events related to rules object ------
+//------ handlers related to rules object ------
+const rulesDisplay = document.getElementById("rules");
+
 const closeRules = document.getElementById("closerules");
 closeRules.addEventListener("click", function () {
   rules.closeRules();
@@ -14,16 +16,16 @@ shadebg.addEventListener("click", function () {
   rules.closeRules();
 }); //close rules window when clicking in the dark background
 
-//------- end of events related to rules object -------
+//------- end of handlers related to rules object -------
 
 //###### rules object ######
 const rules = {
   closeRules() {
-    document.getElementById("rules").style.display = "none";
+    rulesDisplay.style.display = "none";
   },
   showRules() {
-    document.getElementById("rules").style.display = "block";
-  },
+    rulesDisplay.style.display = "block";
+  }
 };
 //###### end rules object #######
 
