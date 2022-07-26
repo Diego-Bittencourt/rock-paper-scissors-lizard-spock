@@ -221,12 +221,12 @@ button:disabled {
   width: 45%;
   height: 50%;
   border-radius: 10px;
-  text-align: center;
 }
 
 .score p {
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .rating {
