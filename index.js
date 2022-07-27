@@ -1,7 +1,6 @@
 //------ handlers related to rules object ------
 const rulesDisplay = document.getElementById("rules");
 const rulesWrapperStyle = document.getElementById("rules-wrapper").style;
-const blankFront = document.getElementById("blankfront").style;
 
 const closeRules = document.getElementById("closerules");
 closeRules.addEventListener("click", function () {
@@ -28,7 +27,6 @@ const rules = {
   showRules() {
     rulesDisplay.style.display = "block";
     rulesWrapperStyle.transform = "scale(1)";
-    blankFront.display = "none";
     rulesWrapperStyle.borderRadius = "0%";
   },
   exitAnimation() {
@@ -47,8 +45,7 @@ const rules = {
         index++;
       } 
       else if (index >= 50 && index < 100) {
-        blankFront.display = "block";
-        document.getElementById("rules-wrapper").style.transform = "scale(0.001)";
+        rulesWrapperStyle.transform = "scale(0.001)";
         index++;
       }
     }

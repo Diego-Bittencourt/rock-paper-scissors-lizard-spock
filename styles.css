@@ -326,17 +326,6 @@ p {
   left:0;
 }
 
-.blankfront {
-  position: absolute;
-  background-color: #ffffffe3;
-  display: none;
-  height: 100%;
-  width: 100%;
-  top:0;
-  left:0;
-  z-index: 5;
-}
-
 .bkgroundtrue {
   position: absolute;
   background-color: #312e2e75;
