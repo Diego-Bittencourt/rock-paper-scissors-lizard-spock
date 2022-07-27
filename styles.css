@@ -24,7 +24,7 @@ ul {
 .game-wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 50px);
   padding: 3% 10%;
 }
 
@@ -342,6 +342,9 @@ p {
     font-size: 1.8rem;
   }
 
+  .game-wrapper {
+    height: calc(100vh - 210px);
+  }
   .button-text {
     font-size: 1.4rem;
   }
