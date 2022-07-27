@@ -16,11 +16,27 @@
   <body>
     <nav class="navbar">
       <h1>Rock, Scissors, Paper, Lizard & Spock</h1>
-      <ul id="show-rules">
-        <li id="reset-game"><div>Reset Game</div></li>
-        <li id="rulesbtn"><div> How to play</div></li>
+      <ul id="show-rules" class="show-rules">
+        <li id="reset-game"><div class="button-text">Reset Game</div></li>
+        <li id="rulesbtn"><div class="button-text"> How to play</div></li>
       </ul>
     </nav>
+    <div id="game-stats" class="game-stats">
+      <div class="score">
+        <p>You</p>
+        <p id="playerscore">0</p>
+      </div>
+      <div class="score">
+        <p>PC</p>
+        <p id="computerscore">0</p>
+      </div>
+      <div class="bar-wrapper">
+        <!-- <div class="rating health-text">Win/Lose Rating:</div> -->
+        <p id="healthpercabove" class="score-text-dark rating"></p>
+        <div id="winrate" class="rating health"></div> 
+        <div  class="rating bkhealth"></div>
+      </div>
+    </div>
     <main class="game-wrapper">
       <div id="rules" class="rules" style="display: none;">
         <div id="darkbkground" class="darkbkground">
@@ -38,7 +54,7 @@
         </div>
         </div>
       <div class="description">
-        <h2>Rock, Scissors, Paper, Lizard and Spock</h2>
+        <!-- <h2>Rock, Scissors, Paper, Lizard and Spock</h2> -->
         <h3>The game</h3>
         <p>
           This is a game inspired by the "The Big Bang Theory" TV show in which
@@ -54,23 +70,23 @@
       <div class="button-wrapper">
         <button  value="scissors" id="scissors">
           <i class="fa-solid fa-hand-scissors"></i>
-          <p>Scissors</p>
+          <p class="display-text">Scissors</p>
         </button>
         <button id="paper" value="paper">
           <i class="fa-solid fa-hand"></i>
-          <p>Paper</p>
+          <p class="display-text">Paper</p>
         </button>
         <button id="rock" value="rock">
           <i class="fa-solid fa-hand-back-fist"></i>
-          <p>Rock</p>
+          <p class="display-text">Rock</p>
         </button>
         <button id="lizard" value="lizard">
           <i class="fa-solid fa-hand-lizard"></i>
-          <p>Lizard</p>
+          <p class="display-text">Lizard</p>
         </button>
         <button id="spock" value="spock">
           <i class="fa-solid fa-hand-spock"></i>
-          <p>Spock</p>
+          <p class="display-text">Spock</p>
         </button>
       </div>
       <div class="result-wrapper">
@@ -94,22 +110,7 @@
       </div>
       </div>
     </main>
-    <div id="game-stats" class="game-stats">
-      <div class="score">
-        <p>You</p>
-        <p id="playerscore">0</p>
-      </div>
-      <div class="score">
-        <p>PC</p>
-        <p id="computerscore">0</p>
-      </div>
-      <div class="bar-wrapper">
-        <!-- <div class="rating health-text">Win/Lose Rating:</div> -->
-        <p id="healthpercabove" class="score-text-dark rating"></p>
-        <div id="winrate" class="rating health"></div> 
-        <div  class="rating bkhealth"></div>
-      </div>
-    </div>
+    
     
     <script src="index.js"></script>
   </body>
