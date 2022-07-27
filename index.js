@@ -35,7 +35,7 @@ const rules = {
     clearInterval(id);
     id = setInterval(frame, 10);
     function frame() {
-      if (index === 100) {
+      if (index === 60) {
         rules.closeRules(); 
         clearInterval(id);
       } 
@@ -44,7 +44,7 @@ const rules = {
         // rulesWrapperStyle.transform = scale(0.8);
         index++;
       } 
-      else if (index >= 50 && index < 100) {
+      else if (index >= 50 && index < 60) {
         rulesWrapperStyle.transform = "scale(0.001)";
         index++;
       }
