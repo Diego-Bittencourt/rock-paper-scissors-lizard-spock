@@ -267,9 +267,7 @@ button:disabled {
 }
 
 .rules-wrapper {
-  /* position: absolute; */
   top: 5%;
-  /* left: 12.5vw; */
   margin: 20px auto;
   max-width: 600px;
   width: 75vw;
@@ -280,9 +278,8 @@ button:disabled {
   flex-direction: column;
   padding: 5px 20px;
   border-radius: 5px;
-  z-index: 5;
-  animation-duration: 0.5s;
-  animation-name: fadein;
+  z-index: 3;
+  animation: 0.5s fadein ease-in-out;
 }
 
 @keyframes fadein {
@@ -329,9 +326,19 @@ p {
   left:0;
 }
 
+.blankfront {
+  position: absolute;
+  background-color: #ffffffe3;
+  display: none;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index: 5;
+}
+
 .bkgroundtrue {
   position: absolute;
-
   background-color: #312e2e75;
   height: 100vh;
   width: 100vw;

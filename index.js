@@ -1,9 +1,11 @@
 //------ handlers related to rules object ------
 const rulesDisplay = document.getElementById("rules");
+const rulesWrapperStyle = document.getElementById("rules-wrapper").style;
+const blankFront = document.getElementById("blankfront").style;
 
 const closeRules = document.getElementById("closerules");
 closeRules.addEventListener("click", function () {
-  rules.closeRules();
+  rules.exitAnimation();
 }); //close rules window
 
 const showRulesBtn = document.getElementById("rulesbtn");
@@ -25,6 +27,31 @@ const rules = {
   },
   showRules() {
     rulesDisplay.style.display = "block";
+    rulesWrapperStyle.transform = "scale(1)";
+    blankFront.display = "none";
+    rulesWrapperStyle.borderRadius = "0%";
+  },
+  exitAnimation() {
+    let id = null;
+    let index = 1;
+    clearInterval(id);
+    id = setInterval(frame, 10);
+    function frame() {
+      if (index === 100) {
+        rules.closeRules(); 
+        clearInterval(id);
+      } 
+      else if (index < 50) {
+        rulesWrapperStyle.transform = "scale(" + (1 - index/50) + ")";
+        // rulesWrapperStyle.transform = scale(0.8);
+        index++;
+      } 
+      else if (index >= 50 && index < 100) {
+        blankFront.display = "block";
+        document.getElementById("rules-wrapper").style.transform = "scale(0.001)";
+        index++;
+      }
+    }
   }
 };
 //###### end rules object #######
